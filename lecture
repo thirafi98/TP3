@@ -1,0 +1,73 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package maung;
+
+/**
+ *
+ * @author Thirafi Wian
+ */
+public class lecture {
+   String name;
+   int numStudent;
+   
+   lecturer lect = new lecturer();
+   student[] std = new student[45];
+
+    public lecture(String name, int numStudent) {
+        this.name = name;
+        this.numStudent = numStudent;
+        //lect.getName();
+    }
+
+  
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+   
+   public void setLecturer(String name, String code){
+      lect.name= name;
+      lect.code = code;
+   }
+   
+   public lecturer getLecturer(){
+       return lect;
+   }
+   
+   private int sumStd=0;
+   public void addStudent(student s){
+      this.std[sumStd] = s;
+      this.sumStd++;
+   }   
+
+    public int getNumStudent() {
+        return numStudent;
+    }
+   
+    public void displayLec(){
+        System.out.println("");
+        System.out.println("Lecture : ");
+        System.out.println("Name : "+this.name);
+        System.out.println("maxStudents : "+this.numStudent);
+        System.out.println("Daftar Mahasiswa : ");
+        for(int i=1;i<sumStd;i++){
+            System.out.println("Daftar Mahasiswa : "+std[i].getId()+std[i].getName());
+        }
+        System.out.println("Lecturer's Code : "+lect.getCode());
+        System.out.println("Lecturer's Code : "+lect.getName());
+        
+        //System.out.println("Lecture's Name : "+lect.getName());
+        //System.out.println("Lecture's Code : "+lect.getCode());
+        
+        System.out.println("");
+        
+    }
+   
+    
+}
